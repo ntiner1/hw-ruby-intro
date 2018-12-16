@@ -44,15 +44,20 @@ end
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  return "Hello, " << name
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  return false if s.empty?
+  lower_case = s.downcase[0]
+  return false if /[^a-z]/.match(lower_case)
+  !lower_case.start_with?("a", "e", "i", "o", "u")
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  return false if s.empty? || /[^0-1]/.match(s)
+  num = s.to_i(2)
+  return (num % 4 == 0)
 end
 
 # Part 3
